@@ -10,17 +10,17 @@
 ---@class LuaUnpackCase
 local LuaUnpackCase = {}
 
-local function fun(...)
+local function fun(name, ...)
 	local arg = {...}
 	print(table.unpack(arg))
 	for k, v in pairs(arg) do
 		print(k, v)
 	end
-	print(arg [1],arg[2],arg[3], #arg)
+	print(name, arg [1],arg[2],arg[3], #arg)
 	print('***************')
 end
 
-fun(nil, 2, nil)
-fun(1,2,nil)
-fun(1,nil,nil)
-fun(nil,nil,3)
+fun("Pack", nil, 2, nil)
+fun("Pack", 1,2,nil)
+fun("Pack", 1,nil,nil)
+fun("Pack", nil,nil,3)
