@@ -24,3 +24,5 @@ fun("Pack", nil, 2, nil)
 fun("Pack", 1,2,nil)
 fun("Pack", 1,nil,nil)
 fun("Pack", nil,nil,3)
+
+--弊端：变长参数必须在函数参数的后边
