@@ -11,13 +11,17 @@
 local LuaUnpackCase = {}
 
 local function fun(name, ...)
-	local arg = {...}
-	print(table.unpack(arg))
-	for k, v in pairs(arg) do
-		print(k, v)
+	local args = {...}
+	print('***************orig args****************')
+	for k, v in pairs(args) do
+		print("Value"..k.." = "..v)
 	end
-	print(name, arg [1],arg[2],arg[3], #arg)
-	print('***************')
+	print('***************auto unpack**************')
+	print(table.unpack(args))
+	
+	print('***************manual unpack*********')
+	print(name, args [1],args[2],args[3], "Num = " .. #args)
+	print('\n\n')
 end
 
 fun("Pack", nil, 2, nil)
